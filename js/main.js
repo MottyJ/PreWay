@@ -10,11 +10,16 @@ google.maps.event.addDomListener(window, 'load', function () {
     directionsDisplay2 = new google.maps.DirectionsRenderer({ 'draggable': true });
     directionsDisplay3 = new google.maps.DirectionsRenderer({ 'draggable': true });
 });
-
 function GetRoute() {
     $.ajax("/getall").done(function(res) {
-        console.log('res')
-        $("#underDiv").text(JSON.parse(res))
+        var show = document.getElementById("underDivx");
+          var show2 = document.getElementById("underDivx2");
+            var show3 = document.getElementById("underDivx3");
+        console.log('res');
+        tempArr = res.split(/{|}|,|\[|\]/));
+        show.innerHTML = tempArr[0];
+          show2.innerHTML = tempArr[1];
+            show3.innerHTML = tempArr[2];
     })
 
     var show = document.getElementById("underDiv");
