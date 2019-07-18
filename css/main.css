@@ -330,3 +330,11 @@ textarea {
   height: 12vh;
   background-color: purple;
 }
+
+#txtSource {
+  width: 100%;
+}
+
+#txtDestination {
+  width: 100%;
+}
