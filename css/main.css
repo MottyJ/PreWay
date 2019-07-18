@@ -296,11 +296,11 @@ textarea {
 .input-container {
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 14vw;
   height: 94vh;
   padding: 1vh;
   justify-content: space-evenly;
-  background-color: #999;
+  background-color: rgb(24, 19, 19);
 }
 
 .output-container {
@@ -309,32 +309,81 @@ textarea {
 }
 
 #dvMap {
-  width: 80vw;
+  width: 85vw;
   height: 60vh;
 }
 
 #route-1{
-  width: 80vw;
+  width: 85vw;
   height: 12vh;
-  background-color: red;
+  background-color: rgb(247, 53, 53);
 }
 
 #route-2{
-  width: 80vw;
+  width: 85vw;
   height: 12vh;
-  background-color: green;
+  background-color: rgb(63, 238, 63);
 }
 
 #route-3{
-  width: 80vw;
+  width: 85vw;
   height: 12vh;
-  background-color: purple;
+  background-color: rgb(245, 47, 245);
 }
 
 #txtSource {
-  width: 100%;
+  background-color: #222;
+  width: 90%;
+  height: 40px;
+  text-align: center;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
 }
 
 #txtDestination {
-  width: 100%;
+  background-color: #222;
+  width: 90%;
+  height: 40px;
+  text-align: center;
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+}
+#textInput{
+  color: white;
+}
+.button5 {
+  background-color: rgb(207, 185, 185);
+  color: black;
+  border:   solid rgb(24, 19, 19);
+  height: 40px;
+  border-radius: 8px;
+  width: 100px;
+  
+}
+
+.button5:hover {
+  border-radius: 8px;
+  background-color: #2b2525;
+  color: white;
+  height: 40px;
+   
+}
+ 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
 }
