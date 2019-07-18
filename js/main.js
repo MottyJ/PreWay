@@ -15,19 +15,18 @@ function GetRoute() {
         var show = document.getElementById("underDivx");
           var show2 = document.getElementById("underDivx2");
             var show3 = document.getElementById("underDivx3");
-        console.log('res');
-        tempArr = res.split(/{|}|,|\[|\]/));
-        show.innerHTML = tempArr[0];
-          show2.innerHTML = tempArr[1];
-            show3.innerHTML = tempArr[2];
+        jsonT = JSON.parse(res);
+        show.innerHTML = jsonT[0]['id'];
+          show2.innerHTML = jsonT[1]['id'];
+            show3.innerHTML = jsonT[2]['id'];
     })
 
-    var show = document.getElementById("underDiv");
-    show.style.display = "block";
-    var show2 = document.getElementById("underDiv2");
-    show2.style.display = "block";
-    var show3 = document.getElementById("underDiv3");
-    show3.style.display = "block";
+    // var show = document.getElementById("underDiv");
+    // show.style.display = "block";
+    // var show2 = document.getElementById("underDiv2");
+    // show2.style.display = "block";
+    // var show3 = document.getElementById("underDiv3");
+    // show3.style.display = "block";
     var barcelona = new google.maps.LatLng(41.3947688, 2.0787279);
     var mapOptions = {
         zoom: 7,
