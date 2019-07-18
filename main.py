@@ -7,21 +7,21 @@ import json
 
 connection = connect(host='localhost',
                      user='root',
-                     password='hulk',
-                     db='test',
+                     password='secret',
+                     db='programs',
                      charset='utf8',
                      cursorclass=cursors.DictCursor)
 print(connection)
 
-def connect(sql):
-        with connection.cursor() as cursor:
-            cursor.execute(sql)
-            result = cursor.fetchall()
-            print(result)
-            return json.dumps(result)
+def connecting(sql):
+    with connection.cursor() as cursor:
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        print(result)
+        return json.dumps(result)
 
 #
-my_query = "select field_1 from db_head limit 3 "
+my_query = "select * from Participant "
 # print(my_query)
 
 @bottle.route('/')
@@ -29,18 +29,18 @@ def index():
     return bottle.template("index.html")
 
 @bottle.route('/getall')
-def index():
-    return connect(my_query)
+def gelall():
+    return connecting(my_query)
 
 
 @bottle.route('/css/<filename:re:.*\.css>')
 def d(filename):
-    return bottle.static_file(filename,  root='static/css')
+    return bottle.static_file(filename,  root='./css')
 
 
-@bottle.route('./static/js/<filename:re:.*\.js>')
+@bottle.route('/js/<filename:re:.*\.js>')
 def a(filename):
-    return bottle.static_file(filename,  root='static/js')
+    return bottle.static_file(filename,  root='./js')
 
 
 
@@ -51,4 +51,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-    connect()
+    connecting(my_query)

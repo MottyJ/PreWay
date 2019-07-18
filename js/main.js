@@ -12,9 +12,9 @@ google.maps.event.addDomListener(window, 'load', function () {
 });
 
 function GetRoute() {
-    $.ajax("/getall").success(function(res) {
+    $.ajax("/getall").done(function(res) {
         console.log('res')
-        $("#underDiv").text(res[0])
+        $("#underDiv").text(JSON.parse(res))
     })
     var barcelona = new google.maps.LatLng(41.3947688, 2.0787279);
     var mapOptions = {
