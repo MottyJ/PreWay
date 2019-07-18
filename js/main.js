@@ -16,6 +16,13 @@ function GetRoute() {
         console.log('res')
         $("#underDiv").text(JSON.parse(res))
     })
+
+    var show = document.getElementById("underDiv");
+    show.style.display = "block";
+    var show2 = document.getElementById("underDiv2");
+    show2.style.display = "block";
+    var show3 = document.getElementById("underDiv3");
+    show3.style.display = "block";
     var barcelona = new google.maps.LatLng(41.3947688, 2.0787279);
     var mapOptions = {
         zoom: 7,
@@ -61,28 +68,28 @@ function GetRoute() {
         }
     });
 
-    //*********DISTANCE AND DURATION**********************//
-    var service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix({
-        origins: [source],
-        destinations: [destination],
-        travelMode: google.maps.TravelMode.DRIVING,
-        unitSystem: google.maps.UnitSystem.METRIC,
-        avoidHighways: false,
-        avoidTolls: false,
-    }, function (response, status) {
-        if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
-            var distance = response.rows[0].elements[0].distance.text;
-            var duration = response.rows[0].elements[0].duration.text;
-            var dvDistance = document.getElementById("dvDistance");
-           dvDistance.innerHTML = "";
-            dvDistance.innerHTML += "Distance: " + distance + "<br />";
-            dvDistance.innerHTML += "Duration:" + duration;
+    // //*********DISTANCE AND DURATION**********************//
+    // var service = new google.maps.DistanceMatrixService();
+    // service.getDistanceMatrix({
+    //     origins: [source],
+    //     destinations: [destination],
+    //     travelMode: google.maps.TravelMode.DRIVING,
+    //     unitSystem: google.maps.UnitSystem.METRIC,
+    //     avoidHighways: false,
+    //     avoidTolls: false,
+    // }, function (response, status) {
+    //     if (status == google.maps.DistanceMatrixStatus.OK && response.rows[0].elements[0].status != "ZERO_RESULTS") {
+    //         var distance = response.rows[0].elements[0].distance.text;
+    //         var duration = response.rows[0].elements[0].duration.text;
+    //         var dvDistance = document.getElementById("dvDistance");
+    //        dvDistance.innerHTML = "";
+    //         dvDistance.innerHTML += "Distance: " + distance + "<br />";
+    //         dvDistance.innerHTML += "Duration:" + duration;
 
-        } else {
-            alert("Unable to find the distance via road.");
-        }
-    });
+    //     } else {
+    //         alert("Unable to find the distance via road.");
+    //     }
+    // });
 }
 
 document.getElementById("get-route").addEventListener("click", GetRoute);

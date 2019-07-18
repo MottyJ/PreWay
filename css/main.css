@@ -300,6 +300,7 @@ textarea {
   height: 94vh;
   padding: 1vh;
   justify-content: space-evenly;
+  align-items: center;
   background-color: rgb(24, 19, 19);
 }
 
@@ -317,18 +318,24 @@ textarea {
   width: 85vw;
   height: 12vh;
   background-color: rgb(247, 53, 53);
+  display: flex;
+  justify-content: center;
 }
 
 #route-2{
   width: 85vw;
   height: 12vh;
   background-color: rgb(63, 238, 63);
+  display: flex;
+  justify-content: center;
 }
 
 #route-3{
   width: 85vw;
   height: 12vh;
   background-color: rgb(245, 47, 245);
+  display: flex;
+  justify-content: center;
 }
 
 #txtSource {
@@ -386,4 +393,8 @@ textarea {
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
+}
+
+#underDiv, #underDiv2, #underDiv3 {
+  display: none;
 }
